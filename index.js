@@ -1,5 +1,3 @@
-// app.js
-
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -26,7 +24,12 @@ db.once('open', () => {
   console.log('Connected to MongoDB');
 });
 
-// Route middleware
+// Home route
+app.get('/', (req, res) => {
+  res.send('Welcome to the Legal Aid API!');
+});
+
+// API routes
 app.use('/api', formDataRoutes);
 
 // Start the server
